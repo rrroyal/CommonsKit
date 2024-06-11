@@ -22,7 +22,7 @@ public struct Haptics {
 
 public extension Haptics {
 	/// Haptic feedback style.
-	enum HapticStyle {
+	enum HapticStyle: Sendable {
 		/// `UINotificationFeedbackGenerator.FeedbackType.error` (`SystemSoundID(1521)` on older devices).
 		case error
 		/// `UINotificationFeedbackGenerator.FeedbackType.success`
