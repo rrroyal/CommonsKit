@@ -9,5 +9,7 @@ import Foundation
 
 public extension UserDefaults {
 	/// Group UserDefaults.
-	static let group = UserDefaults(suiteName: "group.\(Bundle.main.mainBundleIdentifier ?? Bundle.main.bundleIdentifier ?? "")")
+	static var group: UserDefaults? {
+		UserDefaults(suiteName: "group.\(Bundle.main.mainBundleIdentifier ?? Bundle.main.bundleIdentifier ?? "")")
+	}
 }
