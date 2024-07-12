@@ -8,6 +8,9 @@
 import SwiftUI
 
 public extension View {
+	/// Hides this view conditionally.
+	/// - Parameter isHidden: A Boolean value indicating whether the view should be hidden or not
+	/// - Returns: Optionally hidden `View`
 	@ViewBuilder @inlinable
 	func hidden(_ isHidden: Bool) -> some View {
 		if isHidden {

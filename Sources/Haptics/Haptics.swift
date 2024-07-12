@@ -13,6 +13,7 @@ import Foundation
 public struct Haptics {
 	/// Generates a haptic feedback with specified style.
 	/// - Parameter style: Haptic feedback style.
+	@MainActor
 	public static func generate(_ style: HapticStyle) {
 		generateHapticForCurrentPlatform(style: style)
 	}

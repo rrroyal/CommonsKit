@@ -12,6 +12,7 @@ import AudioToolbox
 import CoreHaptics
 
 extension Haptics {
+	@MainActor @inlinable
 	static func generateHapticForCurrentPlatform(style: Haptics.HapticStyle) {
 		let supportsHaptics = CHHapticEngine.capabilitiesForHardware().supportsHaptics
 		if supportsHaptics {

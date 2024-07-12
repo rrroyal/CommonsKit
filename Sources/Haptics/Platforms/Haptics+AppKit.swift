@@ -10,6 +10,7 @@ import Foundation
 import AppKit
 
 extension Haptics {
+	@MainActor @inlinable
 	static func generateHapticForCurrentPlatform(style: Haptics.HapticStyle) {
 		// TODO: Haptics+AppKit
 	}
