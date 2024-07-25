@@ -27,9 +27,4 @@ public extension Bundle {
 	var appIdentifierPrefix: String? {
 		Bundle.main.infoDictionary?["AppIdentifierPrefix"] as? String
 	}
-
-	/// Group identifier, including `AppIdentifierPrefix`.
-	var groupIdentifier: String? {
-		"\(appIdentifierPrefix ?? "")group.\(mainBundleIdentifier ?? bundleIdentifier ?? "")"
-	}
 }
