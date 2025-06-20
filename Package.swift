@@ -5,18 +5,20 @@ import PackageDescription
 
 let package = Package(
 	name: "CommonKit",
+	defaultLocalization: "en",
 	platforms: [
-		.iOS(.v17),
-		.macOS(.v14),
-		.macCatalyst(.v17),
-		.watchOS(.v10),
-		.tvOS(.v17)
+		.iOS(.v18),
+		.macOS(.v15),
+		.macCatalyst(.v18),
+		.watchOS(.v11),
+		.tvOS(.v18)
 	],
 	products: [
 		.library(name: "CommonFoundation", targets: ["CommonFoundation"]),
 		.library(name: "CommonHaptics", targets: ["CommonHaptics"]),
 		.library(name: "CommonOSLog", targets: ["CommonOSLog"]),
 		.library(name: "CommonSwiftUI", targets: ["CommonSwiftUI"]),
+		.library(name: "CommonViews", targets: ["CommonViews"])
 	],
 	dependencies: [],
 	targets: [
@@ -24,5 +26,13 @@ let package = Package(
 		.target(name: "CommonHaptics", dependencies: [], path: "Sources/Haptics"),
 		.target(name: "CommonOSLog", dependencies: [], path: "Sources/OSLog"),
 		.target(name: "CommonSwiftUI", dependencies: [], path: "Sources/SwiftUI"),
+		.target(
+			name: "CommonViews",
+			dependencies: [
+				"CommonFoundation",
+				"CommonOSLog"
+			],
+			path: "Sources/Views"
+		)
 	]
 )
