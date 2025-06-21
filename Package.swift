@@ -24,7 +24,13 @@ let package = Package(
 	targets: [
 		.target(name: "CommonFoundation", dependencies: [], path: "Sources/Foundation"),
 		.target(name: "CommonHaptics", dependencies: [], path: "Sources/Haptics"),
-		.target(name: "CommonOSLog", dependencies: [], path: "Sources/OSLog"),
+		.target(
+			name: "CommonOSLog",
+			dependencies: [
+				"CommonFoundation"
+			],
+			path: "Sources/OSLog"
+		),
 		.target(name: "CommonSwiftUI", dependencies: [], path: "Sources/SwiftUI"),
 		.target(
 			name: "CommonViews",
