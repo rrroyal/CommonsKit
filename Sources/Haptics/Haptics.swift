@@ -10,7 +10,7 @@ import Foundation
 // MARK: - Haptics
 
 /// Helper for providing haptic feedback.
-public struct Haptics {
+public enum Haptics {
 	/// Generates a haptic feedback with specified style.
 	/// - Parameter style: Haptic feedback style.
 	@MainActor

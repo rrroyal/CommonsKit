@@ -6,8 +6,8 @@
 //
 
 #if canImport(AppKit) && !canImport(UIKit)
-import Foundation
 import AppKit
+import Foundation
 
 extension Haptics {
 	@MainActor @inlinable
