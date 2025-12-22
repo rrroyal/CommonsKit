@@ -1,11 +1,9 @@
 //
 //  Collection+safe.swift
-//  CommonKit
+//  CommonFoundation
 //
 //  Created by royal on 04/07/2024.
 //
-
-import Foundation
 
 public extension Collection {
 	/// Returns the element at the specified index if it is within bounds, otherwise nil.

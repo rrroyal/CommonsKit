@@ -1,6 +1,6 @@
 //
 //  Haptics+WatchKit.swift
-//  CommonKit
+//  CommonHaptics
 //
 //  Created by royal on 26/12/2022.
 //

@@ -1,13 +1,14 @@
 //
 //  OSLogsView.swift
-//  CommonKit
+//  CommonViews
 //
 //  Created by royal on 20/06/2025.
 //
 
+#if canImport(OSLog) && canImport(SwiftUI)
 import CommonFoundation
-import CommonOSLog
-import OSLog
+@_exported public import CommonOSLog
+@_exported public import OSLog
 import SwiftUI
 
 public struct OSLogsView: View {
@@ -228,3 +229,5 @@ private extension OSLogEntryLog {
 		OSLogsView()
 	}
 }
+
+#endif

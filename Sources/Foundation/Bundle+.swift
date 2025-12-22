@@ -1,11 +1,11 @@
 //
 //  Bundle+.swift
-//  CommonKit
+//  CommonFoundation
 //
 //  Created by royal on 26/12/2022.
 //
 
-import Foundation
+@_exported public import Foundation
 
 public extension Bundle {
 	/// Short version string, `CFBundleShortVersionString` in `Info.plist`.

@@ -1,12 +1,12 @@
 //
 //  Logger+init.swift
-//  CommonKit
+//  CommonOSLog
 //
 //  Created by royal on 26/12/2022.
 //
 
 import CommonFoundation
-public import OSLog
+@_exported public import OSLog
 
 // MARK: - Logger+init
 

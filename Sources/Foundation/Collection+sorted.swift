@@ -1,11 +1,9 @@
 //
 //  Collection+sorted.swift
-//  CommonKit
+//  CommonFoundation
 //
 //  Created by royal on 04/07/2024.
 //
-
-import Foundation
 
 // MARK: - Sequence+sorted
 

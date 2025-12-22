@@ -1,11 +1,11 @@
 //
 //  Error+isCancellationError.swift
-//  CommonKit
+//  CommonFoundation
 //
 //  Created by royal on 26/12/2022.
 //
 
-import Foundation
+@_exported public import Foundation
 
 public extension Error {
 	/// A Boolean value indicating whether this error is related to task cancellation.
