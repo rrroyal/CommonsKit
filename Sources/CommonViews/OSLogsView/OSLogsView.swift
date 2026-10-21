@@ -155,7 +155,7 @@ private extension OSLogsView {
 			do {
 				let logStore = try OSLogStore(scope: .currentProcessIdentifier)
 
-				let predicates: [NSPredicate] = [
+				let predicates: [NSPredicate] = unsafe [
 					NSPredicate(format: "subsystem CONTAINS[c] %@", Bundle.main.bundleIdentifier ?? "")
 				] + additionalOSLogPredicates
 
@@ -169,9 +169,12 @@ private extension OSLogsView {
 
 				guard !Task.isCancelled else { break fetchLogs }
 
-				let logs = entries.compactMap { $0 as? OSLogEntryLog }
+				let logs = entries
+					.compactMap { $0 as? OSLogEntryLog }
+					.map { OSLogEntryLog._Sendable(log: $0) }
+
 				await MainActor.run {
-					self.logs = logs
+					self.logs = logs.map(\.log)
 				}
 			} catch {
 				await MainActor.run {
@@ -193,6 +196,10 @@ private extension OSLogsView {
 // MARK: - OSLogEntryLog+UI
 
 private extension OSLogEntryLog {
+	struct _Sendable: @unchecked Sendable {
+		let log: OSLogEntryLog
+	}
+
 	var descriptionReadable: String {
 		"\(date.ISO8601Format()) [\(category)] (\(levelReadable)) \(composedMessage)"
 	}

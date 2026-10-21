@@ -1,7 +1,12 @@
-// swift-tools-version: 6.0
+// swift-tools-version: 6.4
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
+
+let swiftSettings: [SwiftSetting] = [
+	.strictMemorySafety(),
+	.swiftLanguageMode(.v6)
+]
 
 let package = Package(
 	name: "CommonsKit",
@@ -28,15 +33,18 @@ let package = Package(
 		),
 		.target(
 			name: "CommonHaptics",
+			swiftSettings: swiftSettings
 		),
 		.target(
 			name: "CommonOSLog",
 			dependencies: [
 				"CommonFoundation"
 			],
+			swiftSettings: swiftSettings
 		),
 		.target(
 			name: "CommonSwiftUI",
+			swiftSettings: swiftSettings
 		),
 		.target(
 			name: "CommonViews",
@@ -44,6 +52,7 @@ let package = Package(
 				"CommonFoundation",
 				"CommonOSLog"
 			],
+			swiftSettings: swiftSettings
 		)
 	]
 )
