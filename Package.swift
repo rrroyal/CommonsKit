@@ -4,7 +4,7 @@
 import PackageDescription
 
 let package = Package(
-	name: "CommonKit",
+	name: "CommonsKit",
 	defaultLocalization: "en",
 	platforms: [
 		.iOS(.v18),
@@ -22,23 +22,28 @@ let package = Package(
 	],
 	dependencies: [],
 	targets: [
-		.target(name: "CommonFoundation", dependencies: [], path: "Sources/Foundation"),
-		.target(name: "CommonHaptics", dependencies: [], path: "Sources/Haptics"),
+		.target(
+			name: "CommonFoundation",
+			swiftSettings: swiftSettings
+		),
+		.target(
+			name: "CommonHaptics",
+		),
 		.target(
 			name: "CommonOSLog",
 			dependencies: [
 				"CommonFoundation"
 			],
-			path: "Sources/OSLog"
 		),
-		.target(name: "CommonSwiftUI", dependencies: [], path: "Sources/SwiftUI"),
+		.target(
+			name: "CommonSwiftUI",
+		),
 		.target(
 			name: "CommonViews",
 			dependencies: [
 				"CommonFoundation",
 				"CommonOSLog"
 			],
-			path: "Sources/Views"
 		)
 	]
 )
